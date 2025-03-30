@@ -4,7 +4,6 @@ const bookSchema = new mongoose.Schema({
     title: { 
         type: String, 
         required: true, 
-        clubs: [clubSchema] // <--- is this correct? 
     },
     author: { 
         type: String, 

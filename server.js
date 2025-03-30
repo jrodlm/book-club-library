@@ -12,6 +12,8 @@ const Book = require('./models/book')
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 
+const authController = require('./controllers/auth.js');
+
 const port = process.env.PORT ? process.env.PORT : '3000';
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -24,7 +26,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, "public")));
-app.use('/users', userController);
 
 app.use(
   session({
@@ -37,3 +38,8 @@ app.use(
 app.use(passUserToView);
 app.use('/auth', authController);
 app.use(isSignedIn);
+
+
+app.listen(port, () => {
+    console.log(`The express app is ready on port ${port}!`);
+  });
