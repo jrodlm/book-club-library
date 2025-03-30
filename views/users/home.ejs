@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+</head>
+
+<body>
+  <!-- <%- include('./partials/_navbar.ejs') %> -->
+    <% if (user) { %>
+      <h1>
+        <%= user.username %>, Welcome to <%= club.clubname %> 's Libary!
+      </h1>
+      <p>
+        <a class="books-index-link" href="/books">Browse Books</a>
+      <p><a class="add-book" href="/books/new">Add Book</a></p>
+      <p><a href="/users">Connect with other club members!</a></p>
+      </p>
+      <% } else { %>
+        <h1>Welcome to the Book Club Library app, guest.</h1>
+        <p>
+          <a href="/auth/sign-up">Sign up</a> or
+          <a href="/auth/sign-in">Sign in</a>.
+        </p>
+        <% } %>
+</body>
+
+</html>
