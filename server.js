@@ -53,7 +53,7 @@ app.get('/', (req, res) => {
 
 app.use('/auth', authController);
 app.use(isSignedIn);
-app.use('./books', booksController);
+app.use('/books', booksController);
 
 
 app.listen(port, () => {

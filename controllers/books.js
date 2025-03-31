@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
         author: req.body.author,
         summary: req.body.summary,
         discussionDate: [new Date(req.body.discussionDate)],
-        user: req.session.user._id,
+        user: req.session.user._id, // not sure why I should need this if I include the club.
           // clubs: [req.session.user.club] want to include but must figure out rest of code
       });
   
@@ -50,6 +50,37 @@ router.post('/', async (req, res) => {
       res.redirect('/');
     }
   });
+
+
+// EDIT BOOK FORM - WILL SHOW BOOK EDITING FORM 
+router.get('/:id/edit', async (req, res) => {
+  try {
+    const bookToEdit = await Book.findById(req.params.id);
+    res.render('books/edit.ejs', { book: bookToEdit });
+  } catch (err) {
+    console.error('edit form error:', err);
+    res.redirect('/books');
+  }
+});
+
+// UPDATE BOOK ROUTE 
+router.put('/:id', async (req, res) => {
+  try {
+    await Book.findByIdAndUpdate(req.params.id, {
+      title: req.body.title,
+      author: req.body.author,
+      summary: req.body.summary,
+      discussionDate: [new Date(req.body.discussionDate)],
+      user: req.session.user._id, //decision outstanding on keeping this line. 
+        // clubs: [req.session.user.club] want to include but must figure out rest of code
+    });
+    res.redirect('/books');
+  } catch (err) {
+    console.error('Error adding book:', err);
+    res.redirect('/books');
+  }
+});
+
 
   module.exports = router 
 

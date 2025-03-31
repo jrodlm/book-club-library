@@ -1,0 +1,12 @@
+<!-- views/books/index.ejs -->
+<h1>Books in Your Club Library</h1>
+
+<ul>
+  <% books.forEach(book => { %>
+    <li>
+      <strong><%= book.title %></strong> by <%= book.author %><br>
+      Discussion Date: <%= new Date(book.discussionDate[0]).toLocaleDateString() %>
+      <a href="/books/<%= book._id %>/edit">Edit</a>
+    </li>
+  <% }) %>
+</ul>

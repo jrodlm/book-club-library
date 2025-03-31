@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/show.css" />
+    <title>
+        <%= book.title %>
+    </title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+        <h1><%= book.title %> by <%= book.author %></h1>
+            <a
+              href="/users/<%= user._id %>/books/<%= book._id %>/edit"
+            >
+              Edit Book
+            </a>
+            <form
+              action="/users/<%= user._id %>/books/<%= book._id %>?_method=DELETE"
+              method="POST"
+            >
+              <button type="submit">Delete Book</button>
+            </form>
+  </body>
+
+</html>
