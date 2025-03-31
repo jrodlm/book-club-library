@@ -13,12 +13,12 @@ const userSchema = mongoose.Schema({
   role: {
     type: String,
     enum: ['admin', 'member'],
-    default: 'admin',
+    default: 'member',
   },
   club: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Club',
-    required: true,
+    required: false,
   }
 
 });

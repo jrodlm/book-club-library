@@ -4,11 +4,10 @@ const clubSchema = new mongoose.Schema({
     clubName: { 
         type: String, 
         required: true, 
-        users: [userSchema] // <--- is this correct? 
     },
     users: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
     }],
     books: [{
         type: mongoose.Schema.Types.ObjectId,

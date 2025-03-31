@@ -32,12 +32,20 @@ router.post('/sign-up', async (req, res) => {
 
         // need to add an if statement for whether a not a user is an admin or just a member
 
-        await User.create(req.body);
+        const newUser = {
+            username: req.body.username,
+            password: hashedPassword,
+            role: req.body.role
+            // You can add club if you're collecting it later
+          };
+    
+          const createdUser = await User.create(newUser);
+          console.log(createdUser)
 
         res.redirect('/auth/sign-in');
     } catch (error) {
-        console.log(error);
-        res.redirect('/');
+        console.error('SIGN-UP ERROR:', error.message);
+        res.send('Sign-up failed: ' + error.message);
     }
 });
 

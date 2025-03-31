@@ -36,8 +36,17 @@ app.use(
 );
 
 app.use(passUserToView);
+
+app.get('/', (req, res) => {
+    res.render('home.ejs', {
+      user: req.session.user,
+    });
+  });
+
+
 app.use('/auth', authController);
 app.use(isSignedIn);
+
 
 
 app.listen(port, () => {

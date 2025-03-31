@@ -1,0 +1,13 @@
+<nav>
+    <p>
+    <a href="/">  Home | </a>
+        <% if (!user) { %>  <!-- If user is NOT logged in -->
+            <a href="/auth/signin">Sign In</a>
+            <a href="/auth/signup">Sign Up</a>
+        <% } else { %>  <!-- If user is logged in -->
+           <a href="/books">  View Club's Books | </a>
+           <a href="/users">Club Members</a>
+           <a href="/auth/sign-out">  Sign Out</a>
+        <% } %>
+        </p>
+</nav>
