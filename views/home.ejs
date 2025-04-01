@@ -10,20 +10,25 @@
 <body>
     <%- include('./partials/_navbar.ejs') %>
     <% if (user) { %>
-      <h1>
-        <%= user.username %>, Welcome to your club's Libary!
+      <h1><%= user.username %>, Welcome to your club's Libary!
       </h1>
-      <p>
-        <a class="books-index-link" href="/books">Manage Club's Books</a>
+      <P><b>Your Role:</b> <%= user.role %> </P>
+      <p><b>Book Club Name:</b> PLACEHOLDER FOR EJS OUTPUT TAG</p>
+      
+      <% if (user.role === 'admin') { %> 
+      <p><a class="books-index-link" href="/books">Manage Club's Books</a>
       <p><a class="add-book" href="/books/new">Add Book</a></p>
-      <p><a href="/users">Connect with club's members!</a></p>
+      <p><a href="/users">Connect with club's members! </a></p>
+      <% } else { %>
+      <p><a href="/users">Connect with club's members! </a></p>
       </p>
+      <% } %>
+
       <% } else { %>
         <h1>Welcome to the Book Club Library app, guest.</h1>
-        <p>
-          <a href="/auth/sign-up">Sign up</a> or
-          <a href="/auth/sign-in">Sign in</a>.
-        </p>
+        <p>Welcome to the Book Club Library — a shared digital space for your book club to keep track of the books you've read together.</p>
+        <p>Admins can add new books, manage club reading history, and keep your list up to date. Members can view book summaries, discussion dates, and stay connected with their club's reading journey.</p>
+        <p>Whether you're reading one book a month or powering through an entire series, this app keeps your club organized and inspired.</p>
         <% } %>
 </body>
 

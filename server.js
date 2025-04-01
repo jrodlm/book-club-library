@@ -18,6 +18,7 @@ const passUserToView = require('./middleware/pass-user-to-view.js');
 // CONTROLLER VARIABLES 
 const authController = require('./controllers/auth.js');
 const booksController = require('./controllers/books');
+const usersController = require('./controllers/users');
 
 // PORT
 const port = process.env.PORT ? process.env.PORT : '3000';
@@ -44,8 +45,8 @@ app.use(
 
 app.use(passUserToView);
 
-app.get('/', (req, res) => {
-    res.render('home.ejs', {
+app.get('/', (req, res) => {  
+  res.render('home.ejs', {
       user: req.session.user,
     });
   });
@@ -54,6 +55,7 @@ app.get('/', (req, res) => {
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/books', booksController);
+app.use('/users', usersController);
 
 
 app.listen(port, () => {

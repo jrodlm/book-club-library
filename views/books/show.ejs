@@ -11,17 +11,19 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
         <h1><%= book.title %> by <%= book.author %></h1>
-            <a
-              href="/users/<%= user._id %>/books/<%= book._id %>/edit"
-            >
-              Edit Book
-            </a>
-            <form
-              action="/users/<%= user._id %>/books/<%= book._id %>?_method=DELETE"
-              method="POST"
-            >
-              <button type="submit">Delete Book</button>
-            </form>
+        <p><b>Summary</b></p> 
+        <p><%= book.summary %></p>    
+        <p> <b>Discussion Date:</b> <%= book.discussionDate %></p>   
+        <% if (user.role === 'admin') { %> 
+        <a href="/books/<%= book._id %>/edit"> Edit Book </a>
+        <br>
+        <br>
+        <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete Book</button>
+        <% } else { %>
+            <a href="/books">Back To Your Club's Books</a>
+            <% } %>
+        </form>
   </body>
 
 </html>
