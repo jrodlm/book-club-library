@@ -102,8 +102,6 @@ router.put('/:id', async (req, res) => {
 });
 
 
-
-
 // DELETE BOOK ROUTE 
 router.delete('/:bookId', async (req, res) => {
   try {

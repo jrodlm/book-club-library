@@ -1,35 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
+  <title>Document</title>
 </head>
 
 <body>
-    <%- include('./partials/_navbar.ejs') %>
-    <% if (user) { %>
-      <h1><%= user.username %>, Welcome to your club's Libary!
-      </h1>
-      <P><b>Your Role:</b> <%= user.role %> </P>
-      <p><b>Book Club Name:</b> PLACEHOLDER FOR EJS OUTPUT TAG</p>
-      
-      <% if (user.role === 'admin') { %> 
-      <p><a class="books-index-link" href="/books">Manage Club's Books</a>
-      <p><a class="add-book" href="/books/new">Add Book</a></p>
-      <p><a href="/users">Connect with club's members! </a></p>
-      <% } else { %>
-      <p><a href="/users">Connect with club's members! </a></p>
-      </p>
-      <% } %>
-
-      <% } else { %>
-        <h1>Welcome to the Book Club Library app, guest.</h1>
-        <p>Welcome to the Book Club Library — a shared digital space for your book club to keep track of the books you've read together.</p>
-        <p>Admins can add new books, manage club reading history, and keep your list up to date. Members can view book summaries, discussion dates, and stay connected with their club's reading journey.</p>
-        <p>Whether you're reading one book a month or powering through an entire series, this app keeps your club organized and inspired.</p>
-        <% } %>
+  <%- include('./partials/_navbar.ejs') %>
+<h1>hello</h1>
 </body>
-
 </html>

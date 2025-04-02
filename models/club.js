@@ -4,8 +4,9 @@ const clubSchema = new mongoose.Schema({
     clubName: { 
         type: String, 
         required: true, 
+        unique: true
     },
-    users: [{
+    members: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
     }],

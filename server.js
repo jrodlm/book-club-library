@@ -19,8 +19,10 @@ const passUserToView = require('./middleware/pass-user-to-view.js');
 const authController = require('./controllers/auth.js');
 const booksController = require('./controllers/books');
 const usersController = require('./controllers/users');
+const clubsController = require('./controllers/clubs');
 
-// PORT
+
+// PORT CONNECTION
 const port = process.env.PORT ? process.env.PORT : '3000';
 
 // DATABASE LINK 
@@ -45,7 +47,7 @@ app.use(
 
 app.use(passUserToView);
 
-app.get('/', (req, res) => {  
+app.get('/', async (req, res) => {  
   res.render('home.ejs', {
       user: req.session.user,
     });
@@ -56,6 +58,8 @@ app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/books', booksController);
 app.use('/users', usersController);
+app.use('/clubs', clubsController);
+
 
 
 app.listen(port, () => {
