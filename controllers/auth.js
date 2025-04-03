@@ -69,7 +69,7 @@ router.post('/sign-in', async (req, res) => {
 
         };
 
-        res.redirect('/');
+        res.redirect('/clubs');
     } catch (error) {
         console.log(error);
         res.redirect('/');

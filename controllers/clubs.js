@@ -8,7 +8,6 @@ const Club = require('../models/club.js');
 router.get('/', async (req, res) => {
     const currentUser = await User.findById(req.session.user._id) 
     console.log(currentUser)
-    // const club = await Club.findById(req.params.club._id)
     res.render('clubs/index.ejs');
 })
 
