@@ -1,6 +1,5 @@
 @import url(https://fonts.google.com/share?selection.family=Winky+Sans:ital,wght@0,300..900;1,300..900);
 
-/* Reset / Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -8,46 +7,63 @@
   }
   
   body {
-    font-family: 'Winky Sans', 'Segoe UI', sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Winky Sans';
+    background-color:#F4E9D9;
     color: #2d2d2d;
     line-height: 1.6;
+    text-align: center;
   }
 
+  
+.intro-container {
+    display: flex; 
+    flex-direction: column;
+    width: 600px;
+    /* height: 600px; */
+    align-content: center;
+    /* justify-content: space-evenly; */
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    /* gap: 5px; */
+    font-size:larger;
+    /* color: #F4E9D9; */
+    font-weight: bold;
+    background-color:#F4E9D9;
+    opacity: .7;
 
-/* test of sign up and sign in buttons */
-.signup-link,
-.signin-link {
-  /* text-decoration: none;
-  font-size: 1.5em;
-  padding: 8px 0;
-  border-radius: 25px;
-  width: 10em;
-  text-align: center; */
 }
+  .logo {
+    display: flex;
+    width: 20%;
+    height: 20%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding-top: 1rem;
+    opacity: .7;
+  }
 
-.signup-link {
-  /* background-color: #ce4866;
-  color: white;
-  margin: 0 0 20px 0; */
-}
+  .watermarked-image {
+    background-image: url('assets/Library-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.95;
+    position: relative; /* Important for positioning content */
+  }
 
-.signup-link:hover {
-  /* background-color: #ff5378; */
-}
-
-.signin-link {
-  /* background-color: #f6e7e7;
-  color: #1c2e5b;
-  margin: 20px 0 0 0; */
-}
-
-.signin-link:hover {
-  /* background-color: #ffffff; */
-}
-
-
-
+  .signin-container,
+  .signup-container {
+    display: flex;
+    display: inline-block;
+    flex-direction: column;
+    justify-items: center;
+    width: 50%;
+    height: 50%;
+    font-weight: bold;
+  }
   
   /* Layout Container */
   .container {
@@ -79,8 +95,9 @@
   
   /* Headings */
   h1, h2 {
+    text-align: center;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #F4E9D9;
     margin-bottom: 1rem;
   }
   
@@ -102,7 +119,14 @@
   
   /* Forms */
   form {
+    display: flex;
     margin-top: 2rem;
+    width: 30%;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-content: center;
+    align-items: center;
+    color: #F4E9D9;
   }
   
   input, select, textarea {

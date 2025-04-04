@@ -8,7 +8,9 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
+    <div class ="watermarked-image">
   <h1>Sign in</h1>
+  <div class="signin-container">
   <form action="/auth/sign-in" method="POST">
     <label for="username">Username:</label>
     <input type="text" name="username" id="username" required />
@@ -20,6 +22,8 @@
     <option value="member">Club Member</option></select>
     <button type="submit">Sign in</button>
   </form>
+  </div>
+  </div>
 </body>
 </html>
 
