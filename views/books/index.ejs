@@ -1,22 +1,21 @@
 <link rel="stylesheet" href="/styles.css" />
 <%- include('../partials/_navbar.ejs') %>
-<h1>Books in Your Club Library</h1>
-<ul>
-  <% books.forEach(book => { %>
-    <li>
-      <strong><%= book.title %></strong> by <%= book.author %>
-      <br>
-      Discussion Date: <%= new Date(book.discussionDate[0]).toLocaleDateString() %>
-      <br>
-      
-      <% if (user.role === 'admin') { %>
-      <a href="/books/<%= book._id %>/edit">Edit</a>
-      <a href="/books/<%= book._id %>/show">View Details</a>
-      <% } else { %>
-      <a href="/books/<%= book._id %>/show">View Details</a>
-      <% } %>
 
-      <br><br>
-    </li>
+<h2>Books in Your Club Library</h2>
+
+<div class="card-container">
+  <% books.forEach(book => { %>
+    <div class="card">
+      <strong><%= book.title %></strong> 
+      <p>by <%= book.author %></p>
+      <p>Discussion Date: <%= new Date(book.discussionDate[0]).toLocaleDateString() %></p>
+
+      <% if (user.role === 'admin') { %>
+        <a href="/books/<%= book._id %>/edit">Edit</a><br>
+        <a href="/books/<%= book._id %>/show">View Details</a>
+      <% } else { %>
+        <a href="/books/<%= book._id %>/show">View Details</a>
+      <% } %>
+    </div>
   <% }) %>
-</ul>
+</div>
