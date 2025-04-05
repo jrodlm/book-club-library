@@ -44,7 +44,7 @@
     opacity: .7;
   }
 
-  .watermarked-image {
+  .external-background-image {
     background-image: url('assets/Library-background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -98,6 +98,16 @@
     max-width: 960px;
     margin: 0 auto;
     padding: 2rem;
+  }
+
+  .manage-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .manage-cards img {
+    border: 2px solid black;
   }
   
   /* Navbar */
@@ -185,19 +195,20 @@
     flex-wrap: wrap;
     gap: 2rem;
     padding: 2rem;
+    justify-content: center;
   }
 
   .card {
     display: flex;
     flex-direction: column;
-    background: #836666;
+    background: #be8641;
     border: 1px solid #ddd;
     width: 200px;
     border-radius: 6px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    color: #F4E9D9;
+    color: #2d2d2d;
   }
 
 

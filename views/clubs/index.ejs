@@ -10,6 +10,8 @@
 
 <body>
   <%- include('../partials/_navbar.ejs') %>
+  <!-- <div class ="signed-in-background-image"> -->
+    <div class ="external-background-image">
 
   <% if (user) { %>
     <h2>
@@ -19,18 +21,17 @@
 <div class="member-info">
   <p><b>User: </b><%= user.username %></p>
     <p><b> Role: </b> <%= user.role %></p>
-    <% if (user.club) { %>
-    <% } else { %>
+    <% if (!user.club) { %>
       <p>You’re not in a club yet.</p>
     <% } %>
   </div>
+  <div class="manage-cards"</div>
     <% if (user.role === 'admin') { %>
-      <p><a class="books-index-link" href="/books">Manage Club's Books</a></p>
-      <p><a class="add-book" href="/books/new">Add Book</a></p>
-      <p><a href="/users">Connect with club's members!</a></p>
+      <p><a href="/books"><img src="/assets/manage.png" alt="Manage Books" class="books-index-link"></a></p>
+      <p><a href="/books/new"><img src="/assets/add.png" alt="Add Book" class="add-book"></a></p>
+      <p><a href="/users"><img src="/assets/connect.png" alt="Connect with Members" class="users"></a></p>
     <% } else { %>
-      <p><a href="/users">Connect with club's members!</a></p>
-    <% } %>
+      <p><a href="/users"><img src="/assets/connect.png" alt="Connect with Members"></a><a class="users"></a></p>    <% } %>
   <% } %>
 </body>
 </html>

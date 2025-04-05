@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/styles.css" />
 <%- include('../partials/_navbar.ejs') %>
-
+<div class ="signed-in-background-image">
 <h2>Books in Your Club Library</h2>
 
 <div class="card-container">
@@ -8,7 +8,8 @@
     <div class="card">
       <strong><%= book.title %></strong> 
       <p>by <%= book.author %></p>
-      <p>Discussion Date: <%= new Date(book.discussionDate[0]).toLocaleDateString() %></p>
+      <br>
+      <p><b>Discussion Date: </b> <%= new Date(book.discussionDate[0]).toLocaleDateString() %></p>
 
       <% if (user.role === 'admin') { %>
         <a href="/books/<%= book._id %>/edit">Edit</a><br>
@@ -18,4 +19,5 @@
       <% } %>
     </div>
   <% }) %>
+</div>
 </div>
