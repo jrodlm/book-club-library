@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up</title>
   <link rel="stylesheet" href="/styles.css" />
 </head>
+
 <body>
   <%- include('../partials/_navbar.ejs') %>
-  <div class ="external-background-image">
-    <h1>New Account</h1>
-  <div class="signin-container">
-  <form action="/auth/sign-up" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required />
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required />
-    <label for="confirmPassword">Confirm Password:</label>
-    <input 
-      type="password"
-      name="confirmPassword"
-      id="confirmPassword"
-      required 
-    />
-    <label for="role">Select your role:</label>
-    <select id="role" name="role">
-    <option value="admin">Club Admin</option>
-    <option value="member">Club Member</option>
-    </select>
-    <button type="submit">Sign up</button>
-  </form>
-</div>
-</div>
+    <div class="external-background-image">
+      <h1>New Account</h1>
+      <div class="form-container">
+        <form action="/auth/sign-up" method="POST">
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username" required />
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" required />
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" name="confirmPassword" id="confirmPassword" required />
+          <label for="role">Select your role:</label>
+          <select id="role" name="role">
+            <option value="admin">Club Admin</option>
+            <option value="member">Club Member</option>
+          </select>
+          <button type="submit">Sign up</button>
+        </form>
+      </div>
+    </div>
 </body>

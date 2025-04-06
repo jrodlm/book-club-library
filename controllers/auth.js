@@ -30,17 +30,14 @@ router.post('/sign-up', async (req, res) => {
         const hashedPassword = bcrypt.hashSync(req.body.password, 10);
         req.body.password = hashedPassword;
 
-        // need to add an if statement for whether a not a user is an admin or just a member
-
         const newUser = {
             username: req.body.username,
             password: hashedPassword,
             role: req.body.role
-            // You can add club if you're collecting it later
-          };
-    
-          const createdUser = await User.create(newUser);
-          console.log(createdUser)
+        };
+
+        const createdUser = await User.create(newUser);
+        console.log(createdUser)
 
         res.redirect('/auth/sign-in');
     } catch (error) {
@@ -65,7 +62,7 @@ router.post('/sign-in', async (req, res) => {
         req.session.user = {
             username: userInDatabase.username,
             _id: userInDatabase._id,
-            role: userInDatabase.role 
+            role: userInDatabase.role
 
         };
 

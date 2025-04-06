@@ -6,6 +6,7 @@ const Book = require('../models/book.js');
 const Club = require('../models/club.js');
 
 // ALL BOOK ROUTES --- I.N.D.U.C.E.S //
+
 // INDEX OF BOOKS - WILL SHOW ALL OF THE CLUB'S BOOKS 
 router.get('/', async (req, res) => {
   try {
@@ -19,7 +20,6 @@ router.get('/', async (req, res) => {
     res.redirect('/')
   }
 });
-
 
 // SHOW BOOK SUMMARY ROUTE 
 router.get('/:bookId/show', async (req, res) => {
@@ -37,7 +37,6 @@ router.get('/:bookId/show', async (req, res) => {
     console.log(error);
     res.redirect('/');
   }
-  // is it true that this more specific one should be closer to the top? where should it fit in the grand scheme of things? 
 });
 
 // NEW BOOK FORM - WILL SHOW FORM FOR ADDING A NEW BOOK TO THE 'LIBRARY'
@@ -59,8 +58,7 @@ router.post('/', async (req, res) => {
       author: req.body.author,
       summary: req.body.summary,
       discussionDate: [new Date(req.body.discussionDate)],
-      user: req.session.user._id, // not sure why I should need this if I include the club.
-      // clubs: [req.session.user.club] want to include but must figure out rest of code
+      user: req.session.user._id,
     });
 
     await newBook.save();
@@ -91,8 +89,7 @@ router.put('/:id', async (req, res) => {
       author: req.body.author,
       summary: req.body.summary,
       discussionDate: [new Date(req.body.discussionDate)],
-      user: req.session.user._id, //decision outstanding on keeping this line. 
-      // clubs: [req.session.user.club] want to include but must figure out rest of code
+      user: req.session.user._id,
     });
     res.redirect('/books');
   } catch (err) {
@@ -106,7 +103,6 @@ router.put('/:id', async (req, res) => {
 router.delete('/:bookId', async (req, res) => {
   try {
     await Book.findByIdAndDelete(req.params.bookId);
-   
     res.redirect('/books');
   } catch (error) {
     console.log(error);

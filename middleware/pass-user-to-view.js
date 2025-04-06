@@ -11,11 +11,11 @@ const passUserToView = async (req, res, next) => {
         _id: currentUser._id,
         username: currentUser.username,
         role: currentUser.role,
-        club: currentUser.club || null 
+        club: currentUser.club || null
       };
     } catch (err) {
       console.error('Error populating user in middleware:', err);
-      res.locals.user = null; 
+      res.locals.user = null;
     }
   } else {
     res.locals.user = null;
@@ -26,4 +26,3 @@ const passUserToView = async (req, res, next) => {
 
 module.exports = passUserToView;
 
-  

@@ -9,7 +9,7 @@
   body {
     font-family: 'Winky Sans';
     background-color:#F4E9D9;
-    color: #2d2d2d;
+    color: #F4E9D9;
     line-height: 1.6;
     text-align: center;
   }
@@ -19,20 +19,34 @@
     display: flex; 
     flex-direction: column;
     width: 600px;
-    /* height: 600px; */
     align-content: center;
-    /* justify-content: space-evenly; */
     margin: auto;
     margin-top: 20px;
     margin-bottom: 0px;
-    /* gap: 5px; */
     font-size:larger;
-    /* color: #F4E9D9; */
     font-weight: bold;
     background-color:#F4E9D9;
     opacity: .7;
+    color:#2d2d2d; 
 
 }
+
+.summary-container {
+  display: flex; 
+  flex-direction: column;
+  width: 600px;
+  align-content: center;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size:larger;
+  font-weight: bold;
+  background-color:#F4E9D9;
+  opacity: .8;
+  color:#2d2d2d; 
+}
+
+/* IMAGES  */
   .logo {
     display: flex;
     width: 20%;
@@ -52,48 +66,13 @@
     background-attachment: fixed;
     min-height: 100vh;
     opacity: 0.95;
-    position: relative; /* Important for positioning content */
+    position: relative; 
   }
 
-  .signin-container,
-  .signup-container {
-    display: flex;
-    display: inline-block;
-    flex-direction: column;
-    justify-items: center;
-    width: 60%;
-    height: 50%;
-    font-weight: bold;
-  }
 
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 20em;
-    background-color: #836666;
-    /* padding: 30px 40px 20px 40px; */
-    border-radius: 20px;
-    color: #4b598e;
-    font-weight: bold;
-    padding: 1.5rem;
-  }
 
-  /* form label {
-    margin-bottom: 0.25rem;
-    text-align: left;
-    font-size: 0.95rem;
-  } */
-
-  form input,
-  form select {
-    padding: 0.5rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
   
-  /* Layout Container */
+  /* LAYOUT */
   .container {
     max-width: 960px;
     margin: 0 auto;
@@ -110,7 +89,7 @@
     border: 2px solid black;
   }
   
-  /* Navbar */
+  /* NAV */
   nav {
     background-color: #1a1a1a;
     padding: 1rem 2rem;
@@ -131,7 +110,7 @@
     color: #4f8a8b;
   }
   
-  /* Headings */
+  /* HEADINGS */
   h1 {
     text-align: center;
     font-weight: 600;
@@ -142,11 +121,11 @@
  h2 {
     text-align: center;
     font-weight: 600;
-    color: #2d2d2d;
+    color: #F4E9D9;
     margin-bottom: 1rem;
   }
   
-  /* Buttons */
+  /* BUTTONS */
   button, .btn {
     background-color: #2d2d2d;
     color: #fff;
@@ -162,22 +141,51 @@
     background-color: #4f8a8b;
   }
   
-  /* Forms */
+  /* FORMS */
+  .form-container {
+    display: flex;
+    display: inline-block;
+    flex-direction: column;
+    justify-items: center;
+    width: 60%;
+    height: 50%;
+    font-weight: bold;
+  }
+
   form {
     display: flex;
-    margin-top: 2rem;
-    width: 30%;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: space-between;
+    width: 20em;
+    background-color: #836666;
+    margin-top: 2rem;
+    border-radius: 20px;
+    color: #F4E9D9;
+    font-weight: bold;
+    padding: 1.5rem;
+    width: 30%;
     align-content: center;
     align-items: center;
-    color: #F4E9D9;
+  }
+  
+
+  form input,
+  form select {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
   }
 
   .member-info {
     display: flex;
     font-size:large;
     flex-direction: column;
+    color:#2d2d2d;
+    background-color: #F4E9D9; 
+    display: inline-block; 
+    padding: 5px;
+    opacity: 0.8;
   }
   
   input, select, textarea {
@@ -189,10 +197,11 @@
     border-radius: 4px;
   }
   
-  /* Card Styles */ 
+  /* CARD STYLES */ 
   .card-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 2rem;
     padding: 2rem;
     justify-content: center;
@@ -202,14 +211,38 @@
     display: flex;
     flex-direction: column;
     background: #be8641;
-    border: 1px solid #ddd;
-    width: 200px;
+    border: 5px solid #ddd;
+    width: 300px;
     border-radius: 6px;
-    padding: 1.5rem;
+    padding: 1.2rem;
     margin-bottom: 1.5rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     color: #2d2d2d;
   }
 
+
+  .user-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .user-card {
+    background-color: #F4E9D9;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .user-card .avatar {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+  }
+  
 
   

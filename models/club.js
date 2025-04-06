@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 const clubSchema = new mongoose.Schema({
-    clubName: { 
-        type: String, 
-        required: true, 
+    clubName: {
+        type: String,
+        required: true,
         unique: true
     },
     members: [{

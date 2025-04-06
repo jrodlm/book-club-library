@@ -10,28 +10,30 @@
 </head>
 
 <body>
-        <div class ="signed-in-background-image">
-        <h1>Add a new book to your club's library!</h1>
         <%- include('../partials/_navbar.ejs') %>
-                <form action="/books" method="POST">
-                        <label for="book-title">Book Title:</label>
-                        <input type="text" name="title" id="book-title" required>
-                        <br>
-                        <br>
-                        <label for="author">Author:</label>
-                        <input type="text" name="author" id="author" required>
-                        <br>
-                        <br>
-                        <label for="summary">Summary:</label>
-                        <input type="text" name="summary" id="summary" />
-                        <br>
-                        <br>
-                        <label for="discussionDate">Discussion Date:</label>
-                        <input type="date" name="discussionDate" required>
-                        <br>                        
-                        <br>
-                        <button type="submit">Add Book</button>
-                </form>
+                <div class="external-background-image">
+                        <h1>Add a new book to your club's library!</h1>
+                        <div class="form-container">
+                                <form action="/books" method="POST">
+                                        <label for="book-title">Book Title:</label>
+                                        <input type="text" name="title" id="book-title" required>
+                                        <br>
+                                        <br>
+                                        <label for="author">Author:</label>
+                                        <input type="text" name="author" id="author" required>
+                                        <br>
+                                        <br>
+                                        <label for="summary">Summary:</label>
+                                        <input type="text" name="summary" id="summary" />
+                                        <br>
+                                        <br>
+                                        <label for="discussionDate">Discussion Date:</label>
+                                        <input type="date" name="discussionDate" required>
+                                        <br>
+                                        <br>
+                                        <button type="submit">Add Book</button>
+                                </form>
+                        </div>
 </body>
 
 </html>

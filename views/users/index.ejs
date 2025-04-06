@@ -1,16 +1,16 @@
 <%- include('../partials/_navbar.ejs') %>
-<link rel="stylesheet" href="/styles.css" />
-<h1>Club Members</h1>
-<ul>
-  <% users.forEach(user => { %>
-    <li>
-      <a href="/users/<%= user._id %>"><%= user.username %></a>
-    </li>
-  <% }) %>
-</ul>
-
-
-<!-- if users.clubName === "user.club.clubName" 
- <a <li user.user.username 
- 
-else, there are no other members associated with your club -->
+  <link rel="stylesheet" href="/styles.css" />
+  <div class="external-background-image">
+    <h1>Community</h1>
+    <div class="user-card-container">
+      <% users.forEach(user=> { %>
+        <div class="user-card">
+          <img src="https://ui-avatars.com/api/?name=<%= user.username %>&background=4b598e&color=fff&rounded=true"
+            alt="Avatar for <%= user.username %>" class="avatar">
+          <a href="/users/<%= user._id %>">
+            <%= user.username %>
+          </a>
+        </div>
+        <% }) %>
+    </div>
+  </div>
