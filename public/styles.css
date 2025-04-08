@@ -220,6 +220,14 @@
     color: #2d2d2d;
   }
 
+  .view-books-card {
+    display: flex;
+    border: 5px solid #ddd;
+    width: 40%;
+    height: 70%;
+    border-radius: 6px;
+    color: #2d2d2d;
+  }
 
   .user-card-container {
     display: flex;

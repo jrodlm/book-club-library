@@ -14,8 +14,7 @@
 
       <% if (user) { %>
         <h2>
-          <%= user.club ? user.club.clubName : 'your' %>
-            Book Club Dashboard
+          <%= user.club ? user.club.clubName + " Dashboard" : "" %>
         </h2>
         <div class="member-info">
           <p><b>User: </b>
@@ -28,12 +27,13 @@
             <p>You’re not in a club yet.</p>
             <% } %>
         </div>
-        <div class="manage-cards" </div>
+        <div class="manage-cards">
           <% if (user.role==='admin' ) { %>
             <p><a href="/books"><img src="/assets/manage.png" alt="Manage Books" class="books-index-link"></a></p>
             <p><a href="/books/new"><img src="/assets/add.png" alt="Add Book" class="add-book"></a></p>
             <p><a href="/users"><img src="/assets/connect.png" alt="Connect with Members" class="users"></a></p>
             <% } else { %>
+              <p><a href="/books"><img src="/assets/view.png" alt="View Books" class="view-books-card"></a></p>
               <p><a href="/users"><img src="/assets/connect.png" alt="Connect with Members"></a><a class="users"></a>
               </p>
               <% } %>

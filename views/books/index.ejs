@@ -1,8 +1,12 @@
 <link rel="stylesheet" href="/styles.css" />
 <%- include('../partials/_navbar.ejs') %>
   <div class="external-background-image">
-    <h2>Books in Your Club Library</h2>
-
+    <% if (user.club) { %>
+      <h2><%= user.club.clubName + "'s Library" %></h2>
+    <% } else { %>
+      <h2>Your Club Library</h2>
+    <% } %>
+    
     <div class="card-container">
       <% books.forEach(book=> { %>
         <div class="card">
@@ -12,10 +16,7 @@
           <p>by <%= book.author %>
           </p>
           <br>
-          <p><b>Discussion Date: </b>
-            <%= new Date(book.discussionDate[0]).toLocaleDateString() %>
-          </p>
-
+          <p><b>Discussion Date:</b> <%= new Date(book.discussionDate).toLocaleDateString('en-US') %></p>
           <% if (user.role==='admin' ) { %>
             <a href="/books/<%= book._id %>/edit">Edit</a><br>
             <a href="/books/<%= book._id %>/show">View Details</a>

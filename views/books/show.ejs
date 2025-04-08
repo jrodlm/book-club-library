@@ -13,8 +13,8 @@
 
 <body>
     <%- include('../partials/_navbar.ejs') %>
-        <div class="signed-in-background-image">
-            <h1>
+    <div class="external-background-image">
+        <h1>
                 <%= book.title %> by <%= book.author %>
             </h1>
             <div class="summary-container">
@@ -22,9 +22,9 @@
                 <p>
                     <%= book.summary %>
                 </p>
-                <p> <b>Discussion Date:</b>
-                    <%= book.discussionDate %>
-                </p>
+                <br>
+                <p><b>Discussion Date</b> <%= new Date(book.discussionDate).toLocaleDateString('en-US') %></p>
+
                 <a href="/books">Back To Your Club's Books</a>
                 <% if (user.role==='admin' ) { %> <br>
             </div>

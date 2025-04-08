@@ -1,24 +1,30 @@
 <link rel="stylesheet" href="/styles.css" />
 <%- include('../partials/_navbar.ejs') %>
-  <div class="external-background-image">
-    <h2>Editing: <%= book.title %>
-    </h2>
-    <div class="form-container">
-      <form action="/books/<%= book._id %>?_method=PUT" method="POST">
-        <label for="title">Title:</label>
-        <input type="text" name="title" value="<%= book.title %>" required><br>
+<div class="external-background-image">
+  <h2>Editing: <%= book.title %></h2>
+  <div class="form-container">
+    
+    <form action="/books/<%= book._id %>?_method=PUT" method="POST">
+      <label for="title">Title:</label>
+      <input type="text" name="title" value="<%= book.title %>" required><br>
 
-        <label for="author">Author:</label>
-        <input type="text" name="author" value="<%= book.author %>" required><br>
+      <label for="author">Author:</label>
+      <input type="text" name="author" value="<%= book.author %>" required><br>
 
-        <label for="summary">Summary:</label>
-        <textarea name="summary"><%= book.summary %></textarea><br>
+      <label for="summary">Summary:</label>
+      <textarea name="summary"><%= book.summary %></textarea><br>
 
-        <label for="discussionDate">Discussion Date:</label>
-        <input type="date" name="discussionDate" value="<%= book.discussionDate[0].toISOString().slice(0, 10) %>"
-          required><br>
-        <a href="/books/"><button type="button">Back To Library</button></a>
-        <br>
-        <button type="submit">Update Book</button>
-      </form>
-    </div>
+      <label for="discussionDate">Discussion Date:</label>
+      <input type="date" name="discussionDate" value="<%= book.discussionDate[0].toISOString().slice(0, 10) %>" required><br>
+
+      <a href="/books/"><button type="button">Back To Library</button></a>
+      <br>
+      <button type="submit">Update Book</button>
+    </form>
+
+    <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
+      <button type="submit" class="delete-btn">Delete Book</button>
+    </form>
+
+  </div>
+</div>

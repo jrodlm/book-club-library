@@ -9,17 +9,19 @@ const Club = require('../models/club.js');
 
 // INDEX OF BOOKS - WILL SHOW ALL OF THE CLUB'S BOOKS 
 router.get('/', async (req, res) => {
+  console.log('📚 /books route hit'); // just to confirm route works
   try {
-    const allBooks = await Book.find()
-    console.log(allBooks)
+    const allBooks = await Book.find().populate('clubs');
+    console.log('📚 All books:', allBooks);
     res.render('books/index.ejs', {
       books: allBooks
     });
   } catch (error) {
-    console.log(error)
-    res.redirect('/')
+    console.error('❌ Error in /books route:', error);
+    res.status(500).send('Something went wrong in the books route.');
   }
 });
+
 
 // SHOW BOOK SUMMARY ROUTE 
 router.get('/:bookId/show', async (req, res) => {
