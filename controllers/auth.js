@@ -41,8 +41,8 @@ router.post('/sign-up', async (req, res) => {
 
         res.redirect('/auth/sign-in');
     } catch (error) {
-        console.error('SIGN-UP ERROR:', error.message);
-        res.send('Sign-up failed: ' + error.message);
+        console.log(error);
+        res.redirect('/');
     }
 });
 

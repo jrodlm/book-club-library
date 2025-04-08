@@ -7,8 +7,8 @@ router.get('/', async (req, res) => {
   try {
     const users = await User.find();
     res.render('users/index.ejs', { users });
-  } catch (err) {
-    console.error('Error fetching users:', err);
+  } catch (error) {
+    console.log(error);
     res.redirect('/');
   }
 });

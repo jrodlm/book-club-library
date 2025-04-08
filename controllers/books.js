@@ -9,16 +9,14 @@ const Club = require('../models/club.js');
 
 // INDEX OF BOOKS - WILL SHOW ALL OF THE CLUB'S BOOKS 
 router.get('/', async (req, res) => {
-  console.log('📚 /books route hit'); // just to confirm route works
   try {
     const allBooks = await Book.find().populate('clubs');
-    console.log('📚 All books:', allBooks);
     res.render('books/index.ejs', {
       books: allBooks
     });
   } catch (error) {
-    console.error('❌ Error in /books route:', error);
-    res.status(500).send('Something went wrong in the books route.');
+    console.error(error);
+    res.redirect('/');
   }
 });
 
@@ -47,7 +45,7 @@ router.get('/new', async (req, res) => {
     const books = await Book.find();
     res.render('books/new.ejs', { books });
   } catch (err) {
-    console.error('Error adding book:', err);
+    console.error('Error adding book:', error);
     res.redirect('/');
   }
 });
@@ -66,7 +64,7 @@ router.post('/', async (req, res) => {
     await newBook.save();
     res.redirect('/books');
   } catch (err) {
-    console.error('Error adding book:', err);
+    console.error('Error adding book:', error);
     res.redirect('/');
   }
 });
@@ -77,8 +75,8 @@ router.get('/:id/edit', async (req, res) => {
   try {
     const bookToEdit = await Book.findById(req.params.id);
     res.render('books/edit.ejs', { book: bookToEdit });
-  } catch (err) {
-    console.error('edit form error:', err);
+  } catch (error) {
+    console.error('edit form error:', error);
     res.redirect('/books');
   }
 });
@@ -94,8 +92,8 @@ router.put('/:id', async (req, res) => {
       user: req.session.user._id,
     });
     res.redirect('/books');
-  } catch (err) {
-    console.error('Error adding book:', err);
+  } catch (error) {
+    console.error('Error adding book:', error);
     res.redirect('/books');
   }
 });

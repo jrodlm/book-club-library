@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
 
     res.redirect('/');
   } catch (error) {
-    console.error('Error creating club:', error);
+    console.log(error);
     res.redirect('/');
   }
 });
