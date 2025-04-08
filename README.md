@@ -17,6 +17,8 @@ The Book Club Library is a shared digital space for clubs to:
 
 Admins can add/edit books, manage club reading lists, and oversee membership. Members can view summaries, discussion dates, and stay connected with their community.
 
+Planning Page - https://trello.com/b/vePPzVD2/jarods-unit-2-project-book-club-library 
+
 <h2>Technologies Used</h2>
 
 Node.js / Express.js
